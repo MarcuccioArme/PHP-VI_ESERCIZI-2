@@ -12,10 +12,10 @@
     <form action="<?php echo($_SERVER["PHP_SELF"]) ?>" method="post">
 
         Quanti numeri vuoi inserire nell'Array?
-        <input type="number" id="dimensione" name="dimensione" required><br><br>
+        <input type="number" id="dimensione" name="dimensione" min="1" required><br><br>
 
         Che numero vuoi cercare?
-        <input type="number" id="numero_da_cercare" name="numero_da_cercare" required><br><br>
+        <input type="number" id="numero_da_cercare" name="numero_da_cercare" min="1" required><br><br>
 
         <input type="submit" name="submit" value="Invia">
 
@@ -31,13 +31,13 @@
         $array = [];
         $dimensione = $_POST["dimensione"];
 
-        for ($i=0; $i<$dimensione; $i++) {
+        for ($i = 0; $i < $dimensione; $i++) {
             $numero = rand(1,20);
             $array[] = $numero;
         }
 
         echo "<br><b>Array:</b> <br>";
-        for ($i=0; $i<$dimensione; $i++) {
+        for ($i = 0; $i < $dimensione; $i++) {
             $contenuto = $array[$i];
             echo "$contenuto ";
         }
